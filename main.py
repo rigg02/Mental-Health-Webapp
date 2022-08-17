@@ -102,6 +102,7 @@ elif model == 'K-nearestNeighbor':
     st.write('accuracy_train = ', accuracy_score(y_train, knn_train))
     st.write('accuracy_test = ', accuracy_score(y_test, knn_pred))
 '''
+
 elif model == 'GaussianNB':
     from sklearn.naive_bayes import GaussianNB
     gnb = GaussianNB()

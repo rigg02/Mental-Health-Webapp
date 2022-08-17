@@ -92,7 +92,7 @@ elif model == 'Logistic Regression':
     st.write("Accuracy of model Training - ", accuracy)
     accuracy2 = accuracy_score(y_test, LL_pred)
 
-'''
+
 elif model == 'K-nearestNeighbor':
     from sklearn.neighbors import KNeighborsClassifier
     knn = KNeighborsClassifier(n_neighbors=27)
@@ -101,9 +101,9 @@ elif model == 'K-nearestNeighbor':
     knn_train = knn.predict(X_train)
     st.write('accuracy_train = ', accuracy_score(y_train, knn_train))
     st.write('accuracy_test = ', accuracy_score(y_test, knn_pred))
-'''
 
-else:
+
+elif model == 'GaussianNB':
     from sklearn.naive_bayes import GaussianNB
     gnb = GaussianNB()
     gnb.fit(X_train, y_train)

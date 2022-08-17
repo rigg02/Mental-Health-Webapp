@@ -33,6 +33,9 @@ df1 = NC.copy()
 from sklearn.preprocessing import LabelEncoder
 cols = df1.columns
 
+st.write("Updated Dataframe :")
+st.dataframe(df1)
+
 encoder = LabelEncoder()
 for col in cols:
     encoder.fit(df1[col])

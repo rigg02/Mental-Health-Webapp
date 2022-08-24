@@ -24,7 +24,7 @@ if uploaded_file is not None:
 df.isnull().sum().sort_values(ascending=False)
 df.dropna(inplace=True)
 
-column = st.sidebar.multiselect("Choose columns to drop", df.columns)
+column = st.sidebar.multiselect("Choose String columns to drop", df.columns)
 NC = df.drop(column, axis=1)
 
 S = pd.DataFrame(NC)

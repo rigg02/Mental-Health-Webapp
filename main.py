@@ -22,7 +22,7 @@ if uploaded_file is not None:
         st.write("The dimensions of uploaded CSV are :", df.shape)
 
 df.isnull().sum().sort_values(ascending=False)
-df.dropna(inplace=True)
+
 
 column = st.sidebar.multiselect("Choose String columns to drop", df.columns)
 NC = df.drop(column, axis=1)
@@ -30,11 +30,16 @@ NC = df.drop(column, axis=1)
 S = pd.DataFrame(NC)
 df1 = NC.copy()
 
+
+
 from sklearn.preprocessing import LabelEncoder
 cols = df1.columns
 
 st.write("Updated Dataframe :")
 st.dataframe(df1)
+
+df1.convert_objects(convert_numeric=True).dropna()
+df.dropna(inplace=True)
 
 encoder = LabelEncoder()
 for col in cols:
